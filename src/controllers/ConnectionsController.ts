@@ -22,7 +22,7 @@ export default class ConnectionsController {
 
    const { total } = totalConnections[0];
 
-   return res.status(201).json({ message: 'sucess', total })
+   return res.status(201).json({ total })
 
   } catch (err) {
    return res.status(400).json({ error: err })
