@@ -14,11 +14,18 @@ export default class ConnectionsController {
   } catch (err) {
    return res.status(400).json({ error: err })
   }
-
-
  }
 
  async index(req: Request, res: Response) {
+  try {
+   const totalConnections = await db('connections').count('* as total');
 
+   const { total } = totalConnections[0];
+
+   return res.status(201).json({ message: 'sucess', total })
+
+  } catch (err) {
+   return res.status(400).json({ error: err })
+  }
  }
 }
