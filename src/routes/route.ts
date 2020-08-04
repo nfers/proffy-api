@@ -7,6 +7,7 @@ const user = [{ name: 'Teste', age: 0 }]
 const classesController = new ClassesController;
 
 routes.post('/classes', classesController.create)
+routes.get('/classes', classesController.index)
 
 routes.get('/users', (req: Request, res: Response) => {
  console.log('chamou users');
