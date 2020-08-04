@@ -1,0 +1,12 @@
+{
+ "sqltools.connections": [
+  {
+   "database": "${workspaceFolder:server}/src/database/db/db-proffy.sqlite3",
+   "driver": "SQLite",
+   "group": "proffy",
+   "name": "db-proffy",
+   "previewLimit": 50
+  }
+ ],
+ "sqltools.useNodeRuntime": true
+}
