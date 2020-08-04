@@ -1,13 +1,19 @@
 import { Router, Request, Response } from 'express'
 import ClassesController from '../controllers/ClassesController';
+import ConnectionsController from '../controllers/ConnectionsController'
 
 
 const routes = Router();
 const user = [{ name: 'Teste', age: 0 }]
-const classesController = new ClassesController;
 
-routes.post('/classes', classesController.create)
-routes.get('/classes', classesController.index)
+const classesController = new ClassesController;
+const connectionsController = new ConnectionsController;
+
+routes.post('/classes', classesController.create);
+routes.get('/classes', classesController.index);
+
+routes.post('/connections', connectionsController.create);
+routes.get('/connections', connectionsController.index);
 
 routes.get('/users', (req: Request, res: Response) => {
  console.log('chamou users');
